@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-  base: './',
+const repoName = 'repoAWS';
+
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? `/${repoName}/` : '/',
   esbuild: {
     jsx: 'automatic',
     jsxImportSource: 'react'
   }
-});
+}));
