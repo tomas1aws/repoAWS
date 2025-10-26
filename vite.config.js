@@ -1,11 +1,9 @@
 import { defineConfig } from 'vite';
 
-const repoName = process.env.GITHUB_REPOSITORY?.split('/').pop() ?? 'repoAWS';
-
-export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? `/${repoName}/` : '/',
+export default defineConfig({
+  base: '/repoAWS/',
   esbuild: {
     jsx: 'automatic',
-    jsxImportSource: 'react'
-  }
-}));
+    jsxImportSource: 'react',
+  },
+});
